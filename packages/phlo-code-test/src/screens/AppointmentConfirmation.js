@@ -31,9 +31,17 @@ export default function BookingConfirmation() {
       </TextStyled>
       <TextStyled color="#000">Please find your details below:</TextStyled>
       <ul>
-        <li>{name}</li>
-        <li>{email}</li>
-        {nhs ? <li>{nhs}</li> : null}
+        <li>
+          name: <strong>{name}</strong>
+        </li>
+        <li>
+          email: <strong>{email}</strong>
+        </li>
+        {nhs ? (
+          <li>
+            NHS number: <strong>{nhs}</strong>
+          </li>
+        ) : null}
       </ul>
       Please click <a href="/">here</a> to return to the home page
     </StyledContainer>
