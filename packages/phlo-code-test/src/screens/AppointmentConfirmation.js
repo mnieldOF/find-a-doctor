@@ -25,10 +25,17 @@ export default function BookingConfirmation() {
         We are delighted to confirm your app with <strong>{doctor}</strong>
       </TextStyled>
       <TextStyled color="#000">
-        Your appointment will take place at the following address:
-        <strong>{address}</strong>,<strong>date: {date}</strong>,
-        <strong>time: {time}</strong>,
+        Your appointment will take place at the following address:<br></br>
+        <strong>{address}</strong>
       </TextStyled>
+      <ul>
+        <li>
+          Date: <strong>{date}</strong>
+        </li>
+        <li>
+          Time: <strong>{time}</strong>
+        </li>
+      </ul>
       <TextStyled color="#000">Please find your details below:</TextStyled>
       <ul>
         <li>
