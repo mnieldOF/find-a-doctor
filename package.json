@@ -1,0 +1,29 @@
+{
+    "private": true,
+    "name": "phlo-mono",
+    "workspaces": [
+        "packages/*"
+    ],
+    "scripts": {
+        "phlo": "yarn workspace phlo-code-test start",
+        "build": "yarn workspace phlo-code-test build"
+    },
+    "dependencies": {
+        "@craco/craco": "^6.3.0",
+        "@emotion/core": "^11.0.0",
+        "@emotion/react": "^11.5.0",
+        "@emotion/styled": "^11.3.0",
+        "@reach/router": "^1.3.4",
+        "@react-google-maps/api": "^2.5.0",
+        "axios": "^0.23.0",
+        "concurrently": "^6.3.0",
+        "emotion-theming": "^11.0.0",
+        "formik": "^2.2.9",
+        "google-map-react": "^2.1.10",
+        "polished": "^4.1.3",
+        "react-select": "^5.1.0",
+        "webfontloader": "^1.6.28",
+        "yup": "^0.32.11"
+    },
+    "packageManager": "yarn@3.0.2"
+}
