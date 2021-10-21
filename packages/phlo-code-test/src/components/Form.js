@@ -47,8 +47,39 @@ const StyledForm = styled.div`
     flex-direction: column;
     margin-bottom: 20px;
     label {
-      font-size: 16px;
+      font-size: 14px;
       margin-bottom: 4px;
+    }
+    .date-time {
+      display: flex;
+      border: 1px solid #000;
+      border-radius: 4px;
+      background: transparent;
+      position: relative;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      label {
+        position: absolute;
+        top: -25px;
+        left: 0;
+      }
+      input {
+        border: 0px;
+        background: transparent;
+        flex: 2;
+        border-right: 1px solid #000;
+        padding: 5px;
+        border-radius: 0px;
+        &:nth-of-type(2) {
+          flex: 1;
+          border-right: 0px;
+        }
+      }
+      #error {
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+      }
     }
   }
   button[type="submit"] {
@@ -117,7 +148,7 @@ const ContactForm = ({ doctor }) => {
         <Formik
           initialValues={{
             date: "",
-            // time: "",
+            time: "",
             name: "",
             email: "",
             nhs: "",
@@ -130,14 +161,16 @@ const ContactForm = ({ doctor }) => {
           {({ isSubmitting, dirty, isValid }) => (
             <Form className="form">
               <div className="inner">
-                <div className="form-field date-time">
-                  <MyTextInput
-                    label="Please select your date and time"
-                    name="date"
-                    type="date"
-                    required
-                  />
-                  <input type="time" name="time" />
+                <div className="form-field">
+                  <div className="date-time">
+                    <MyTextInput
+                      label="Please select your date and time"
+                      name="date"
+                      type="date"
+                      required
+                    />
+                    <MyTextInput name="time" type="time" />
+                  </div>
                 </div>
                 <div className="form-field">
                   <MyTextInput

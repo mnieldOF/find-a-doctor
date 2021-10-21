@@ -20,7 +20,7 @@ const MyTextInput = ({ label, ...props }) => {
       </label>
       <StyledInput className="text-input" {...field} {...props} />
       {meta.touched && meta.error ? (
-        <TextStyled color="red" fontSize="14px" m="5px 0 0">
+        <TextStyled id="error" color="red" fontSize="14px" m="5px 0 0">
           {meta.error}
         </TextStyled>
       ) : null}
