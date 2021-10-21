@@ -1,1 +1,1 @@
-export { TextStyled, GlobalStyle, theme } from "./src/design-system";
+export { TextStyled, Container, GlobalStyle, theme } from "./src/design-system";

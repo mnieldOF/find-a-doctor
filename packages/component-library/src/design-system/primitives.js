@@ -35,3 +35,8 @@ export const TextStyled = styled.p(
   border
 );
 
+export const Container = styled.div`
+  maxwidth: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+`;

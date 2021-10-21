@@ -1,10 +1,12 @@
 import React from "react";
-
+import { TextStyled, Container } from "@phlo/component-library";
 const About = () => {
   return (
-    <div>
-      <h1>About</h1>
-    </div>
+    <Container>
+      <TextStyled color="#000" as="h1">
+        About
+      </TextStyled>
+    </Container>
   );
 };
 

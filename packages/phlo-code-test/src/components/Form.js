@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "@emotion/styled";
+import { navigate } from "@reach/router";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import MyTextInput from "./text-input";
 import { TextStyled, theme } from "@phlo/component-library";
-import DateTimeInput from "./DateTimeInput";
 
 const StyledForm = styled.div`
   width: 750px;
@@ -105,10 +105,9 @@ const StyledForm = styled.div`
   }
 `;
 
-const ContactForm = ({ doctor }) => {
+const ContactForm = ({ doctor, close }) => {
   const validationSchema = Yup.object().shape({
     date: Yup.date().required("Please pick a date"),
-    // time: Yup.string().required("Please pick a time"),
     name: Yup.string().required("Please enter your name"),
     email: Yup.string().email("Invalid email").required("Required"),
   });
@@ -147,6 +146,8 @@ const ContactForm = ({ doctor }) => {
         </TextStyled>
         <Formik
           initialValues={{
+            doctor: doctor.name,
+            address: doctor.address,
             date: "",
             time: "",
             name: "",
@@ -155,7 +156,9 @@ const ContactForm = ({ doctor }) => {
           }}
           validationSchema={validationSchema}
           onSubmit={(values) => {
-            console.log(values);
+            const newValues = JSON.stringify(values);
+            navigate(`/appointment-confirmation/${newValues}`);
+            close(false);
           }}
         >
           {({ isSubmitting, dirty, isValid }) => (

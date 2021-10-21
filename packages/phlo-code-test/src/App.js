@@ -6,7 +6,14 @@ import { theme, GlobalStyle } from "@phlo/component-library";
 import Map from "./components/Map";
 import Header from "./components/Header";
 import Modal from "./components/Modal";
-import { CarePlans, About, Services, Emergency } from "./screens";
+import Loading from "./components/Loading";
+import {
+  CarePlans,
+  About,
+  Services,
+  Emergency,
+  AppointmentConfirmation,
+} from "./screens";
 import useGeoLocation from "./hooks/useGeoLocation";
 import { getNearbyDoctors } from "./api";
 
@@ -41,6 +48,7 @@ function App() {
         <About path="/about" />
         <Services path="/services" />
         <Emergency path="/emergency" />
+        <AppointmentConfirmation path="/appointment-confirmation/:appointment" />
       </Router>
     );
   };
@@ -50,9 +58,9 @@ function App() {
       <GlobalStyle />
       <div className="App">
         <Header />
-        {!location.loaded ? "loading" : <Routes />}
+        {!location.loaded ? <Loading /> : <Routes />}
         <Modal close={setIsOpen} open={isOpen}>
-          <ContactForm doctor={selectedDoctor} />
+          <ContactForm close={setIsOpen} doctor={selectedDoctor} />
         </Modal>
       </div>
     </ThemeProvider>
