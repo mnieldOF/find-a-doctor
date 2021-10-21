@@ -4,6 +4,7 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import MyTextInput from "./text-input";
 import { TextStyled, theme } from "@phlo/component-library";
+import DateTimeInput from "./DateTimeInput";
 
 const StyledForm = styled.div`
   width: 750px;
@@ -76,7 +77,7 @@ const StyledForm = styled.div`
 const ContactForm = ({ doctor }) => {
   const validationSchema = Yup.object().shape({
     date: Yup.date().required("Please pick a date"),
-    time: Yup.string().required("Please pick a time"),
+    // time: Yup.string().required("Please pick a time"),
     name: Yup.string().required("Please enter your name"),
     email: Yup.string().email("Invalid email").required("Required"),
   });
@@ -116,7 +117,7 @@ const ContactForm = ({ doctor }) => {
         <Formik
           initialValues={{
             date: "",
-            time: "",
+            // time: "",
             name: "",
             email: "",
             nhs: "",
@@ -129,9 +130,14 @@ const ContactForm = ({ doctor }) => {
           {({ isSubmitting, dirty, isValid }) => (
             <Form className="form">
               <div className="inner">
-                <div className="form-field">
-                  <input type="date" />
-                  <input type="time" />
+                <div className="form-field date-time">
+                  <MyTextInput
+                    label="Please select your date and time"
+                    name="date"
+                    type="date"
+                    required
+                  />
+                  <input type="time" name="time" />
                 </div>
                 <div className="form-field">
                   <MyTextInput

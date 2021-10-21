@@ -1,7 +1,7 @@
 import React from "react";
 import { useField } from "formik";
 import styled from "@emotion/styled";
-import { TextStyled, theme } from "@phlo/component-library";
+import { TextStyled } from "@phlo/component-library";
 
 const StyledInput = styled.input`
   border: 1px solid #000;
