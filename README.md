@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Step 1
 
-Once the project is cloned please fun `yarn install`
+Once the project is cloned please run `yarn install`
 
 ## Available Scripts
 
